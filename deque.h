@@ -8,31 +8,34 @@
 #ifndef DEQUE_H
 #define DEQUE_H
 
-#include <iostream>
-using namespace std;
-
-class deque
-{
+class Deque {
 private:
-  int** blockmap;
-  int size;
-  
-  //helpers go here
-  void expandfront();
-  void expandback();
-  
-public:
-  deque();
-  ~deque();
-  
-  void pushfront(int insert);
-  void popfront();
-  int front();
-  int back();
-  bool empty();
-  int size();
-  operator[](int location);
+    int** blockmap;
+    int blockSize;
+    int frontBlock;
+    int backBlock;
+    int frontIndex;
+    int backIndex;
+    int capacity;
 
-  //accessors (public helpers) go here
-  
-} #endif //DEQUE_H
+public:
+    Deque();
+    ~Deque();
+
+    void push_front(int value);
+    void pop_front();
+    void push_back(int value);
+    void pop_back();
+    int front();
+    int back();
+    bool empty();
+    int size();
+    int operator[](int index);
+    void is_empty();
+
+private:
+    void resizeDeque();
+};
+
+#endif // DEQUE_H
+

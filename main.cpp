@@ -10,39 +10,42 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <deque>
 #include "deque.h"
 
 using namespace std;
 
 int main() {
-    Deque<int> myDeque;
+    Deque deque;
 
-    // Adding elements to the deque
-    myDeque.push_back(1);
-    myDeque.push_back(2);
-    myDeque.push_front(0);
-    myDeque.push_front(-1);
+    // Push elements to the front and back of the deque
+    for (int i = 1; i <= 10; ++i) {
+        deque.push_front(i); // Adds elements 5, 4, 3, 2, 1 to the front
+        deque.push_back(i * 10); // Adds elements 10, 20, 30, 40, 50 to the back
+    }
 
-    // Accessing elements using front() and back()
-    cout << "Front element: " << myDeque.front() << endl;
-    cout << "Back element: " << myDeque.back() << endl;
+    // Output the front and back elements
+    cout << "Front element: " << deque.front() << endl; // Should output: 10
+    cout << "Back element: " << deque.back() << endl;   // Should output: 100
 
-    // Accessing elements using operator[]
-    cout << "Element at index 2: " << myDeque[2] << endl;
+    // Output the size of the deque
+    cout << "Size of deque: " << deque.size() << endl;   // Should output: 20
 
-    // Removing elements from the deque
-    myDeque.pop_back();
-    myDeque.pop_front();
+    // Access elements using operator[]
+    cout << "Element at index 3: " << deque[3] << endl;  // Should output: 7
+    cout << "Element at index 8: " << deque[8] << endl;  // Should output: 2
+    cout << "Element at index 13: " << deque[13] << endl; // Should output: 40
 
-    // Checking size and if the deque is empty
-    cout << "Size of deque: " << myDeque.size() << endl;
-    cout << "Is deque empty? " << (myDeque.empty() ? "Yes" : "No") << endl;
+    // Pop elements from the front and back of the deque
+    deque.pop_front(); // Removes front element 10
+    deque.pop_back();  // Removes back element 100
 
-    // Accessing elements after removal
-    cout << "New front element: " << myDeque.front() << endl;
-    cout << "New back element: " << myDeque.back() << endl;
+    // Output the front and back elements after popping
+    cout << "Front element after popping: " << deque.front() << endl; // Should output: 9
+    cout << "Back element after popping: " << deque.back() << endl;   // Should output: 90
+
+    // Output the size of the deque after popping
+    cout << "Size of deque after popping: " << deque.size() << endl;  // Should output: 18
+
 
     return 0;
 }
-
