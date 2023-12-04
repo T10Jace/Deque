@@ -1,8 +1,8 @@
 /**
  * @file deque.h
- * @author Tristan Riley
+* @author Tristan Riley and Jesse Doescher
  * @date 2023-11-27
- * @brief
+ * @brief Header file defining the `Deque` class with its member variables and functions for deque operations.
  */
 
 #ifndef DEQUE_H

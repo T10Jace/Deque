@@ -1,8 +1,8 @@
 /**
  * @file deque.cpp
- * @author Tristan Riley
+ * @author Tristan Riley and Jesse Doescher
  * @date 2023-11-27
- * @brief
+ * @brief Implementation file containing the definitions for the member functions of the `Deque` class.
  */
 
 #include <iostream>
@@ -190,8 +190,11 @@ void Deque::resizeDeque() {
     // Delete the old blockmap
     delete[] blockmap;
 
+
+
     // Update capacity and assign the new blockmap
     capacity = newCapacity;
     blockmap = newBlockmap;
 }
+
 
